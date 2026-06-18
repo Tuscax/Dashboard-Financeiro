@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+</head>
+<body class="bg-gray-900 text-white light:bg-white">
+    <main class="px-30 py-20">
+        <div>
+        <h1 class="mb-10 text-6xl font-semibold">Dashboard Financeiro</h1>
+        <select name="Tema" id="" class="bg-gray-700" onchange="alterarModo()">
+            <option value="dark">Emo mode</option>
+            <option value="light">Ome mode</option>
+        </select>
+    </div>
+        <section class="flex justify-between items-center text-4xl">
+            <div class="bg-gray-700 w-1/4 p-6 rounded-2xl ">
+                <h2>Saldo</h2>
+                <span id="saldo" class="text-blue-500 font-medium ">R$ 0,00</span>
+            </div>
+            <div class="bg-gray-700 w-1/4 p-6 rounded-2xl ">
+                <h2>Entradas</h2>
+                <span id="entrada" class="text-green-600 font-medium ">R$ 0,00</span>
+            </div>
+            <div class="bg-gray-700 w-1/4 p-6 rounded-2xl ">
+                <h2 >Saidas</h2>
+                <span id="saida" class="text-red-600 font-medium ">R$ 0,00</span>
+            </div>
+        </section>
+        <section class="text-3xl">
+            <h2 class="mt-10 mb-6 font-bold text-4xl">Nova Transação</h2>
+            <form class="bg-gray-700 rounded-2xl p-6 flex flex-row justify-between items-center">
+                <div class="flex w-[50%] gap-5">
+                    <label for="desc">Descrição</label>
+                    <input id="desc" type="text" class="border-2 border-indigo-500 rounded-2xl bg-indigo-500 p-1">
+                </div>
+                <div class="flex w-[50%] gap-5">
+                    <label for="valor">valor</label>
+                    <input id="valor" type="number" class="border-2 border-indigo-500 rounded-2xl bg-indigo-500 p-1">
+                </div>
+                <div class="flex flex-row gap-5">
+                    <label for="tipo"></label>
+                    <select name="tipo" id="tipo">
+                    <option value="entrada" class="bg-indigo-500 border-indigo-500">Entrada</option>
+                    <option value="saida" class="bg-indigo-500 border-indigo-500">Saida</option>
+                </div>
+                </select>
+                <button type="button" onclick="addTransacao()" class="bg-indigo-600 px-4 py-2 rounded-2xl">Adicionar</button>
+            </form>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
